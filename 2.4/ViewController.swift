@@ -25,6 +25,9 @@ class ViewController: UIViewController {
         firstColor.text = "Red"
         secondColor.text = "Green"
         thirdColor.text = "Blue"
+        firstColorSlider.layer.cornerRadius = firstColorSlider.frame.height / 2
+        secondColorSlider.layer.cornerRadius = secondColorSlider.frame.height / 2
+        thirdColorSlider.layer.cornerRadius = thirdColorSlider.frame.height / 2
         setupFirstColorSlider()
         setupFirstColorData()
         setupSecondColorSlider()
@@ -34,9 +37,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func slidersActions() {
-        firstColorData.text = "\(firstColorSlider.value.rounded())"
-        secondColorData.text = "\(secondColorSlider.value.rounded())"
-        thirdColorData.text = "\(thirdColorSlider.value.rounded())"
+        firstColorData.text = "\(Int(firstColorSlider.value))"
+        secondColorData.text = "\(Int(secondColorSlider.value))"
+        thirdColorData.text = "\(Int(thirdColorSlider.value))"
         changeColor()
     }
     
