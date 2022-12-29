@@ -10,28 +10,38 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var screen: UIView!
+    
     @IBOutlet var firstColor: UILabel!
     @IBOutlet var firstColorData: UILabel!
+    
     @IBOutlet var secondColor: UILabel!
     @IBOutlet var secondColorData: UILabel!
+    
     @IBOutlet var thirdColor: UILabel!
     @IBOutlet var thirdColorData: UILabel!
+    
     @IBOutlet var firstColorSlider: UISlider!
     @IBOutlet var secondColorSlider: UISlider!
     @IBOutlet var thirdColorSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeColor()
+        
         firstColor.text = "Red"
         secondColor.text = "Green"
         thirdColor.text = "Blue"
+        
         firstColorSlider.layer.cornerRadius = firstColorSlider.frame.height / 2
         secondColorSlider.layer.cornerRadius = secondColorSlider.frame.height / 2
         thirdColorSlider.layer.cornerRadius = thirdColorSlider.frame.height / 2
+        
         setupFirstColorSlider()
         setupFirstColorData()
+        
         setupSecondColorSlider()
         setupSecondColorData ()
+        
         setupThirdColorSlider()
         setupThirdColorData()
     }
